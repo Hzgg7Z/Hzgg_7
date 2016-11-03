@@ -61,6 +61,7 @@
 		178032961DCA3A8C00D42F93 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 178032771DCA3A8C00D42F93 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		178032971DCA3A8C00D42F93 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 178032791DCA3A8C00D42F93 /* View+MASAdditions.m */; };
 		178032981DCA3A8C00D42F93 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1780327C1DCA3A8C00D42F93 /* ViewController+MASAdditions.m */; };
+		2BE94E1C1DCB2EAE002F52EE /* PushColnttoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE94E1B1DCB2EAE002F52EE /* PushColnttoller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +183,8 @@
 		1780327A1DCA3A8C00D42F93 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		1780327B1DCA3A8C00D42F93 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		1780327C1DCA3A8C00D42F93 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		2BE94E1A1DCB2EAE002F52EE /* PushColnttoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushColnttoller.h; sourceTree = "<group>"; };
+		2BE94E1B1DCB2EAE002F52EE /* PushColnttoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushColnttoller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 				178031DD1DCA38ED00D42F93 /* AppDelegate.m */,
 				178031DF1DCA38ED00D42F93 /* ViewController.h */,
 				178031E01DCA38ED00D42F93 /* ViewController.m */,
+				2BE94E1A1DCB2EAE002F52EE /* PushColnttoller.h */,
+				2BE94E1B1DCB2EAE002F52EE /* PushColnttoller.m */,
 				178031EA1DCA38ED00D42F93 /* Info.plist */,
 				178031D91DCA38ED00D42F93 /* Supporting Files */,
 			);
@@ -518,6 +523,7 @@
 				178032151DCA394E00D42F93 /* SDWebImageCompat.m in Sources */,
 				178032911DCA3A8C00D42F93 /* MASConstraintMaker.m in Sources */,
 				1780328D1DCA3A8C00D42F93 /* DKFlowLayOut.m in Sources */,
+				2BE94E1C1DCB2EAE002F52EE /* PushColnttoller.m in Sources */,
 				1780321C1DCA394E00D42F93 /* UIImage+GIF.m in Sources */,
 				178031DB1DCA38ED00D42F93 /* main.m in Sources */,
 			);
@@ -651,6 +657,7 @@
 				178031EF1DCA38ED00D42F93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

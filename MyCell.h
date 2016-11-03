@@ -11,6 +11,4 @@
 #import "Hunbian.h"
 @interface MyCell : UICollectionViewCell
 @property(strong,nonatomic)User *model;
-
-
 @end

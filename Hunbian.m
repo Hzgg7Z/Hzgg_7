@@ -16,7 +16,8 @@
     UIImage *image = imageD;
     NSTextAttachment *textAttach = [[NSTextAttachment alloc] init];
     textAttach.image = image;
-    textAttach.bounds=CGRectMake(0, -6, Font, Font);
+    textAttach.bounds=CGRectMake(0, -6, Font*1.2, Font);
+    
     //————————————————————————————————————————
 //    NSAttributedString *stringImage = [NSAttributedString attributedStringWithAttachment:attchImage];
 //    [attriStr insertAttributedString:stringImage atIndex:2];//图片添加位置。（Index）

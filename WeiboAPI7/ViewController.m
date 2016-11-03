@@ -12,6 +12,7 @@
 #import "MyCell.h"
 #import "UIImageView+WebCache.h"
 #import "ViewController.h"
+#import "PushColnttoller.h"
 
 @interface ViewController ()<UIWebViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property(strong,nonatomic)UIWebView*webView;
@@ -67,8 +68,15 @@
         cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
         cell.model = _dataModelArr[indexPath.row];
     }
-    //    cell.mylabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PushColnttoller *page=[[PushColnttoller alloc]init];
+    page.view.backgroundColor=Scolor;
+    [self presentViewController:page animated:YES completion:^{
+        page.view.backgroundColor=Scolor;
+        NSLog(@"推出了一个什么鬼");
+    }];
 }
 //—————————————————————————————————————
 //—————————————————————————————————————
@@ -121,7 +129,7 @@
 /**获取weibo*/
 -(void)requestGetWeiBoStatusWith:(NSString *)token{
     //获取数据
-    NSInteger Number=20;
+    NSInteger Number=50;
     [HTTPKit HTTPGET:self.APIListBook[APIKey_public_timeline] param:@{@"access_token":token,@"count":@(Number)} success:^(id responseObject) {
         //        NSString *dataJsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         //获取数据成功 考虑是否缓存数据  并布局
@@ -130,20 +138,8 @@
         _dataModelArr = [NSMutableArray array];
         for (NSDictionary* statusDiction in MyDict[@"statuses"]) {
             My_Weibo *mode=[My_Weibo modelObjectWithDictionary:statusDiction];
-            ////            NSString *imageUrl=mode.user.profileImageUrl;
-            //                        NSString *imageUrl=mode.user.avatarHd;
-            //            [self.urlsArray addObject:imageUrl];
-            //            My_Weibo *modeText=[My_Weibo modelObjectWithDictionary:statusDiction];
-            //            NSString *Text=modeText.text;
-            //            [self.TextArray addObject:Text];
-            //
-            //            NSLog(@"=-=--%@",self.urlsArray);
-            //            NSLog(@"+++++++++++++++%@",self.TextArray);
-            //            NSLog(@"+++++++++++++++一共请求了%lu条图片",(unsigned long)self.urlsArray.count);
-            //            NSLog(@"*****************一共请求了%lu条消息",(unsigned long)self.TextArray.count);
             [_dataModelArr addObject:mode.user];
         }
-        
         [self AddCollectionView:4 and:2];
     } failBlock:nil];
 }
