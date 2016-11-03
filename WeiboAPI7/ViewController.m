@@ -27,22 +27,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
-    
+
+    [self OnpenWeibo];
+}
+-(void)OnpenWeibo{
     if (self.tokenString) {
         //内存获取成功 直接用token获取数据
         [self requestGetWeiBoStatusWith:_tokenString];
-        
     } else {
         [self.view addSubview:self.webView];
-        
     }
-    
 }
 #pragma mark - 渲染在UI
 -(void)AddCollectionView:(int)line and:(int)row{
     //    int line = 2;
     //    int row = 4;
-    CGRect frameOfCollectionview = CGRectMake(0, 20, self.view.bounds.size.width,self.view.bounds.size.height-20);
+    UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(0, 20, Kw, 44)];
+    [self.view addSubview:button];
+    button.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    
+    UIButton *button1=[[UIButton alloc]initWithFrame:CGRectMake(5, 25, 34, 34)];
+    UIImage *image=[UIImage imageNamed:@"SBB"];
+    [button1 setImage:image forState:UIControlStateNormal];
+    [self.view addSubview:button1];
+    button1.layer.cornerRadius=17;
+    button1.clipsToBounds=YES;
+    button1.backgroundColor=[UIColor redColor];
+    
+    UIButton *button2=[[UIButton alloc]initWithFrame:CGRectMake(Kw-39, 25, 34, 34)];
+    [self.view addSubview:button2];
+    button2.backgroundColor=[UIColor grayColor];
+    
+    
+    CGRect frameOfCollectionview = CGRectMake(0, 64, self.view.bounds.size.width,self.view.bounds.size.height-64);
     CGFloat margin = 10.0;
     UICollectionViewFlowLayout *flow=[[UICollectionViewFlowLayout alloc]init];
     UICollectionView*collview=[[UICollectionView alloc]initWithFrame:frameOfCollectionview collectionViewLayout:flow];
@@ -61,7 +78,6 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _dataModelArr.count;
 }
-
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MyCell *cell;
     if (cell == nil) {
@@ -140,7 +156,7 @@
             My_Weibo *mode=[My_Weibo modelObjectWithDictionary:statusDiction];
             [_dataModelArr addObject:mode.user];
         }
-        [self AddCollectionView:4 and:2];
+        [self AddCollectionView:2 and:1];
     } failBlock:nil];
 }
 #pragma make ----懒加载
