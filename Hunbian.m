@@ -7,13 +7,13 @@
 @end
 @implementation Hunbian
 
--(void)addLabelScriptColor:(UIColor *)ScriptColor ScriptSize:(CGFloat)Font Text:(NSString *)ScriptStr Direction:(NSInteger)direction ImageData:(NSData *)data {
+-(void)addLabelScriptColor:(UIColor *)ScriptColor ScriptSize:(CGFloat)Font Text:(NSString *)ScriptStr Direction:(NSInteger)direction ImageData:(UIImage *)imageD {
     NSMutableAttributedString *haha = [[NSMutableAttributedString alloc] initWithString:ScriptStr];
     // 修改富文本中的不同文字的样式
     [haha addAttribute:NSForegroundColorAttributeName value:ScriptColor range:NSMakeRange(0,haha.length)];
     [haha addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:Font/2] range:NSMakeRange(0, haha.length)];
     //————————————————————————————————————————
-    UIImage *image = [UIImage imageWithData:data];
+    UIImage *image = imageD;
     NSTextAttachment *textAttach = [[NSTextAttachment alloc] init];
     textAttach.image = image;
     textAttach.bounds=CGRectMake(0, -6, Font, Font);

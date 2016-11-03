@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 #import "Hunbian.h"
 @interface MyCell : UICollectionViewCell
-@property(strong,nonatomic)Hunbian*mylabel;
-@property(strong,nonatomic)UIImageView*imageV;
+@property(strong,nonatomic)User *model;
+
+
 @end
